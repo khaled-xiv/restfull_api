@@ -52,7 +52,7 @@ trait ApiResponser{
     protected function filterData(Collection $collection,$transformer)
     {
         foreach (request()->query() as $query => $value){
-            $attribute=$transformer::originalAttributes($query);
+//            $attribute=$transformer::originalAttributes($query);
             if(isset($attribute,$value)){
                 $collection = $collection->where($attribute,$value);
             }

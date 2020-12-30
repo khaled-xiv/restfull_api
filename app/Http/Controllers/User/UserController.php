@@ -9,6 +9,11 @@ use App\Models\User;
 
 class UserController extends ApiController
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function index()
     {
         $users=User::all();

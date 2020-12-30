@@ -9,10 +9,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasFactory,Notifiable,SoftDeletes;
+    use HasFactory,HasApiTokens, Notifiable,SoftDeletes;
 
     public $transformer=UserTransformer::class;
     protected $table='users';
